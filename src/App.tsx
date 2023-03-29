@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        Malachi Williams
+        Malachi Williams v2
       </header>
       <ContactInfo />
     </div>
