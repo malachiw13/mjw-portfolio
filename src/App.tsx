@@ -1,16 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import { ContactInfo } from './components/ContactInfo';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        Malachi Williams v2
-      </header>
-      <ContactInfo />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/hello" element={<ContactInfo />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
