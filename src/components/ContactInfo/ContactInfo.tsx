@@ -1,13 +1,17 @@
 import React from 'react';
-import './ContactInfo.css'
+import { portfolioInfo } from '../../shared/interfaces';
+import './ContactInfo.scss'
 
-export const ContactInfo = () => {
+export const ContactInfo = (props: portfolioInfo) => {
     return(
-        <div className="card">
+        <div className="contactCard">
             <h1>Contact Me</h1><br />
-            Malachi Williams <br/>
-            <a href="mailto: malachiw95@hotmail.com">malachiw95@hotmail.com</a><br/>
-            <a href="mailto: malachiw95@gmail.com">malachiw95@gmail.com</a>
+            {props.name} <br/>
+            {
+                props.emails?.map(email => {
+                    return(<><a href={`mailto: ${email}`}>{email}</a> <br /> </>)
+                })
+            }
         </div>
     )
 }
