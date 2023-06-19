@@ -1,25 +1,28 @@
+
 pipeline {
     agent any
-
     stages {
         stage('Build') {
-            docker {
-                image "node:16"
-            }
-            steps {
-                echo 'Building..'
-                sh "npm ci"
-            }
+      agent {
+        docker {
+          image 'node:16'
+        }
+      }
+
+      steps {
+        echo 'Building..'
+        sh 'node --version'
+      }
         }
         stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
+      steps {
+        echo 'Testing..'
+      }
         }
         stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
+      steps {
+        echo 'Deploying....'
+      }
         }
     }
 }
