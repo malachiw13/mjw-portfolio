@@ -1,17 +1,17 @@
 
 pipeline {
-    agent any
-    stages {
+  agent any
+  stages {
         stage('Build') {
-      agent {
-        docker {
-          image 'node:16'
-        }
-      }
+          agent {
+            docker {
+              image 'node:16'
+            }
+          }
 
       steps {
         echo 'Building..'
-        sh 'node --version'
+        sh 'npm ci'
       }
         }
         stage('Test') {
